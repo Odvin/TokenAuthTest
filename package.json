@@ -3,11 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "node ./app.js",
     "pretest": "npm install",
     "test": "node_modules/mocha/bin/mocha --recursive"
   },
   "dependencies": {
-    "express": "*"
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "*",
+    "express-bearer-token": "^2.1.1",
+    "jsonwebtoken": "^8.3.0",
+    "pg": "^7.4.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",

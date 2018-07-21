@@ -60,7 +60,7 @@ describe('Authentication Controller', () => {
 describe('Profile controller', () => {
 
   let _token = null;
-
+ 
   before(() => {
     return request(app)
       .post('/api/login')
@@ -71,13 +71,17 @@ describe('Profile controller', () => {
       });
   });
 
+// assert.equal(data.body.email, _user);
+// was changed to 
+// assert.equal(data.body.email, email);
+
   it('should fetch the profile info of existing user', () => {
     return request(app)
       .get('/api/profile')
       .set('Authorization', 'Bearer ' + _token)
       .expect(200)
       .then((data) => {
-        assert.equal(data.body.email, _user);
+        assert.equal(data.body.email, email);
       });
   });
 
